@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab3-3</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+        body{
+            font-family: "Inconsolata", monospace;
+        }
+        h1{
+            font-size: 40px;
+            font-weight: 900;
+        }
+        th{
+            font-size: 30px;
+            padding: 10px;
+        }
+        
+        td{
+            font-size: 30px;
+            padding: 10px;
+        }
+        table{
+            width: 70%;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td><div id="1" style="background-color: rgb(63, 89, 97); padding: 10px; height: 100%;">Math</div></td>
+            </tr>
+            <tr>
+                <td><div id="2" style="background-color: rgb(62, 60, 176); padding: 10px; height: 100%;">Thai</div></td>
+            </tr>
+            <tr>
+                <td><div id="3" style="background-color: rgb(64, 191, 200); padding: 10px; height: 100%;">English</div></td>
+            </tr>
+            <tr>
+                <td><div id="4" style="background-color: rgb(143, 60, 176); padding: 10px; height: 100%;">Science</div></td>
+            </tr>
+            <tr>
+                <td><div id="5" style="background-color: rgb(176, 60, 60); padding: 10px; height: 100%;">Social</div></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="viewchart();">View Chart</button> 
+
+    <script>
+        let check = 0;
+        function viewchart() {
+            if (check == 0){
+            document.getElementById('1').style = "background-color: rgb(63, 89, 97); padding: 10px; width: 60%;"
+            document.getElementById('2').style = "background-color: rgb(62, 60, 176); padding: 10px; width: 30%;"
+            document.getElementById('3').style = "background-color: rgb(64, 191, 200); padding: 10px; width: 25%;"
+            document.getElementById('4').style = "background-color: rgb(143, 60, 176); padding: 10px; width: 88%;"
+            document.getElementById('5').style = "background-color: rgb(176, 60, 60); padding: 10px; width: 100%;"
+            check = 1;
+        } else {
+            document.getElementById('1').style = "background-color: rgb(63, 89, 97); padding: 10px; width: 100%;"
+            document.getElementById('2').style = "background-color: rgb(62, 60, 176); padding: 10px; width: 100%;"
+            document.getElementById('3').style = "background-color: rgb(64, 191, 200); padding: 10px; width: 100%;"
+            document.getElementById('4').style = "background-color: rgb(143, 60, 176); padding: 10px; width: 100%;"
+            document.getElementById('5').style = "background-color: rgb(176, 60, 60); padding: 10px; width: 100%;"
+            check = 0;
+            }
+        }
+    </script>
+</body>
+</html>

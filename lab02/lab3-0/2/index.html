@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab3</title>
+    <style>
+        img{
+            width: 50%;
+            border-radius: 25px;
+            border: 10px solid rgb(122, 142, 255);
+        }
+    </style>
+</head>
+<body style="background-color: darkgray;">
+    <body> 
+
+        <img id="image1" src="http://10.0.15.21/lab/lab3/images/md1.png" > 
+        <img id="image2" src="http://10.0.15.21/lab/lab3/images/md2.png" > <br> 
+        <button onclick="changeimg();">Change</button> 
+    
+    </body>
+    <script>
+        // ตัวอย่าง function 
+        let check = 0;
+        function changeimg() {
+            if (check == 0){
+            document.getElementById('image1').src = "http://10.0.15.21/lab/lab3/images/md2.png";
+            document.getElementById('image2').src = "http://10.0.15.21/lab/lab3/images/md1.png";
+            check = 1;
+            } else {
+                document.getElementById('image2').src = "http://10.0.15.21/lab/lab3/images/md2.png";
+                document.getElementById('image1').src = "http://10.0.15.21/lab/lab3/images/md1.png";
+            check = 0;
+            }
+        }
+    </script>
+</body>
+</html>
