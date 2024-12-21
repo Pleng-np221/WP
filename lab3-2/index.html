@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        body{
+            background-color: rgb(164, 181, 193);
+            padding: 50px;
+            text-align: center;
+        }
+        h1{
+            font-family: "Krub", serif;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 250%;
+        }
+        button{
+            width: 10%;
+            padding: 10px;
+            font-family: "Krub", serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 150%;
+        }
+        p{
+            padding: 10px;
+        }
+        img{
+            width: 10%;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <header><h1>สุ่มตัวเลข</h1></header>
+    <p></p>
+    <img id="0" src="http://10.0.15.21/lab/lab3/images/0.png" > 
+    <img id="1" src="http://10.0.15.21/lab/lab3/images/0.png" >
+    <img id="2" src="http://10.0.15.21/lab/lab3/images/0.png" > 
+    <img id="3" src="http://10.0.15.21/lab/lab3/images/0.png" >
+    <img id="4" src="http://10.0.15.21/lab/lab3/images/0.png" > 
+    <img id="5" src="http://10.0.15.21/lab/lab3/images/0.png" >
+    <p></p>
+    <button onclick="randomnums();">สร้าง</button> 
+    
+    <script>
+        function randomnums() {
+            for (let i = 0; i < 6; i++) {
+                let num = Math.floor(Math.random() * 10); //nm random=0-1, *10 n floor to make it in range 0-9
+                document.getElementById(i).src = "http://10.0.15.21/lab/lab3/images/"+num+".png";
+            }
+        }
+    </script>
+</body>
+</html>
