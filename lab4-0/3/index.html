@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 24px;
+        }
+        th, td {
+            border: 1px solid grey;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <table id="table1">
+        <thead>
+            <tr>
+                <th class="col1">ID</th>
+                <th>Activities</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    <script>
+        let acts = ["Wakes up for a bath and waits for Mom to eat breakfast.",
+            "Walks around, showing off before heading to the water for a nap.",
+            "Takes a nap in the water.",
+            "Might get up for a stroll or a nap on land.",
+            "Naps on land.",
+            "Naps in the water again.",
+            "Mom gets out of the water for dinner while Moo Deng naps.",
+            "Mom eats grass while Moo Deng waits, occasionally running a bit, followed by a long nap until evening.",
+            "Plays with Mom in the water.",
+            "Drinks milk and playfully disturbs Mom.",
+            "Sleeps soundly for hours."];
+        for (let i in acts){
+            let tr = document.createElement("tr");
+
+            let td1 = document.createElement("td");
+            let txt1 = document.createTextNode(Number(i)+1);
+            td1.appendChild(txt1);
+
+            let td2 = document.createElement("td");
+            let txt2 = document.createTextNode(acts[i]);
+            td2.appendChild(txt2);
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+
+            document.getElementById("table1").appendChild(tr);
+        }
+    </script>
+</body>
+</html>
