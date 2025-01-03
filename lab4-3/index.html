@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab4-3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        body{
+            font-family: "Krub", serif;
+            font-weight: 600;
+            background-color: rgb(164, 181, 193);
+            text-align: center;
+            padding: 20px;
+        }
+        h1{
+            font-family: "Krub", serif;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 250%;
+        }
+        h2{
+            font-family: "Krub", serif;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 200%;
+        }
+        button{
+            font-family: "Krub", serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+        p{
+            padding: 10px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+        }
+        table{
+            margin: auto;
+            width: 70%;
+        }
+        th{
+            background-color: rgb(45, 177, 133);
+            color: white;
+            border: 1px solid grey;
+            padding: 10px;
+        }
+        td {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid grey;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ตารางรายรับ-รายจ่าย</h1>
+        <h2>ยอดคงเหลือ</h2>
+        <h1 id="sum">0</h1>
+    </header>
+</br>
+    <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label class="sr-only" for="name"></label>
+            <input type="text" class="form-control mb-2" id="name" placeholder="รายการ">
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="amount"></label>
+            <input type="text" class="form-control mb-2" id="amount" placeholder="จำนวน">
+          </div>
+          <div class="col-auto">
+            <select class="form-control form-control mb-2" id="type">
+                <option value="00">รายรับ</option>
+                <option value="01">รายจ่าย</option>
+            </select>
+          </div>
+          <div class="col-auto">
+            <input type="date" class="form-control mb-2" id="date">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-success mb-2" onclick="calculate();">เพิ่มรายการ</button>
+          </div>
+        </div>
+    </form>
+</br>
+    <table id="table1">
+        <thead>
+            <tr>
+                <th>วันที่</th>
+                <th>รายการ</th>
+                <th>รายรับ</th>
+                <th>รายจ่าย</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <script>
+        function calculate() {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let amount = document.getElementById("amount").value;
+            let type = document.getElementById("type").value;
+            let date = document.getElementById("date").value;
+            let sumE = document.getElementById("sum");
+            let add = 0;
+            let sub = 0;
+
+            let tr = document.createElement("tr");
+
+            let dateTd = document.createElement("td");
+            dateTd.appendChild(document.createTextNode(date));
+            tr.appendChild(dateTd);
+
+            let nameTd = document.createElement("td");
+            nameTd.appendChild(document.createTextNode(name));
+            tr.appendChild(nameTd);
+
+            if (type == '00'){
+                add = Number(amount);
+            } else {
+                sub = Number(amount);
+            }
+            let addTd = document.createElement("td");
+            addTd.appendChild(document.createTextNode(add));
+            tr.appendChild(addTd);
+            let subTd = document.createElement("td");
+            subTd.appendChild(document.createTextNode(sub));
+            tr.appendChild(subTd);
+
+            const currentSum = parseFloat(sumE.textContent) || 0;
+            const newSum = currentSum + add - sub;
+            sumE.textContent = newSum.toFixed(2);
+            
+            document.getElementById("tbody").appendChild(tr);
+    
+        }
+    </script>
+</body>
+</html>

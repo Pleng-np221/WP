@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab3</title>
+</head>
+<body style="background-color: darkgray;">
+    <body> 
+        <form id="myForm">
+            <p id="l0">
+                <input type="text" id="FirstName" name="FirstName" />
+            </p>
+            <p id="l1">
+                <input type="text" id="LastName" name="LastName" />
+            </p>
+            <p id="l2"><label for='Country'></label>
+                <select id="Country" name="Country">
+                    <option value="00" selected="selected"></option>
+                    <option value="01">Thailand</option>
+                    <option value="02">Vietnam</option>
+                    <option value="03">Laos</option>
+                    <option value="04">Malaysia</option>
+                    <option value="05">Singapore</option>
+                    <option value="06">Philippines</option>
+                    <option value="07">Myanmar</option>
+                    <option value="08">Cambodia</option>
+                    <option value="09">Brunei</option>
+                    <option value="10">Indonesia</option>
+                </select>
+            </p>
+        </form>
+        
+        <button id = "l3" onclick="changeL()"></button>
+        <script>
+            let lang = 'th';
+            let thai = ['ชื่อ', 'นามสกุล', 'ประเทศ', 'เปลี่ยนเป็นอังกฤษ'];
+            let eng = ['First Name', 'Last Name', 'Country', 'Change to Thai'];
+            let ctTH = ["เลือกประเทศ", "ไทย", "เวียดนาม", "ลาว", "มาเลเซีย", "สิงคโปร์", "ฟิลิปปินส์", "เมียนมา", "กัมพูชา", "บรูไน", "อินโดนีเซีย"];
+            let ctEN = ["Select a country", "Thailand", "Vietnam", "Laos", "Malaysia", "Singapore", "Philippines", "Myanmar", "Cambodia", "Brunei", "Indonesia"];
+            function changeL() {
+                lang = lang === 'th' ? 'en' : 'th';
+                const labels = lang === 'th' ? thai : eng;
+
+                let l0G = document.getElementById("l0");
+                let l1G = document.getElementById("l1");
+                let l2G = document.getElementById("l2");
+
+                const l0Ex = l0G.querySelector("label");
+                const l1Ex = l1G.querySelector("label");
+                const l2Ex = l2G.querySelector("label");
+
+                if (l0Ex) l0G.removeChild(l0Ex);
+                if (l1Ex) l1G.removeChild(l1Ex);
+                if (l2Ex) l2G.removeChild(l2Ex);
+
+                let l0 = document.createElement("label");
+                l0.setAttribute("for", "FirstName");
+                l0.textContent = labels[0] + " : ";
+                l0G.insertBefore(l0, document.getElementById("FirstName"));
+                
+                let l1 = document.createElement("label");
+                l1.setAttribute("for", "LastName");
+                l1.textContent = labels[1] + " : ";
+                l1G.insertBefore(l1, document.getElementById("LastName"));
+                
+                let l2 = document.createElement("label");
+                l2.setAttribute("for", "Country");
+                l2.textContent = labels[2] + " : ";
+                l2G.insertBefore(l2, document.getElementById("Country"));
+
+
+                const ct = lang === 'th' ? ctTH : ctEN;
+                const ctSelect = document.getElementById("Country");
+                ctSelect.innerHTML = "";
+
+                for (let i = 0; i < ct.length; i++) {
+                    const option = document.createElement("option");
+                    option.value = "0" + i.toString();
+                    option.textContent = ct[i];
+                    if (i === 0) option.selected = true;
+                    ctSelect.appendChild(option);
+                }
+
+                let buttonLabel = document.createElement("label");
+                buttonLabel.textContent = labels[3];
+                document.getElementById("l3").textContent = '';
+                document.getElementById("l3").appendChild(buttonLabel);
+            }
+            changeL();
+        </script>
+</body>
+</html>
