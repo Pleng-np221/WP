@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5-3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+        body{
+            font-family: "Inconsolata", monospace;
+            font-size: 20px;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+    </form>
+      <script>
+        function show(data) {
+            let form = document.getElementById("form");
+            let count = 1;
+            for (let i of data){
+                let p = document.createElement("p");
+                p.appendChild(document.createTextNode(count.toString()+". "+i.question));
+                form.appendChild(p);
+                for (let j in i.answers) {
+                    if (j !== "correct") {
+                        let label = document.createElement("label");
+                        let btn = document.createElement("input");
+                        
+                        btn.type = "radio";
+                        btn.name = i.question;
+                        btn.value = j;
+                        btn.id = j + i.question;
+
+                        label.setAttribute("for", btn.id);
+                        label.textContent = `${j.toUpperCase()}. ${i.answers[j]}`;
+                        
+                        form.appendChild(btn);
+                        form.appendChild(label);
+                        form.appendChild(document.createElement("br"));
+                    }
+                }
+                count++;
+            }
+        }
+        fetch('questionAnswerData.json')
+            .then(response => response.json())
+            .then(data => show(data))
+            .catch(error => console.log('error', error));
+    </script>
+</body>
+</html>

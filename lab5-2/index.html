@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5-2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+        body{
+            font-family: "Inconsolata", monospace;
+        }
+        h1{
+            font-size: 24px;
+            font-weight: 900;
+            color: rgb(0, 0, 0);
+        }
+        td{
+            font-size: 20px;
+            padding: 40px;
+            background-color: rgb(255, 255, 255);
+            height: 20%;
+            width: 10%;
+            filter: drop-shadow(8px 8px 10px gray);
+            border-radius: 5%;
+            
+        }
+        img{
+            width: 100%;
+        }
+        table{
+            width: 100%;
+        }
+    
+    </style>
+</head>
+<body>
+    <table id="table1">
+    </table>
+    <script>
+        function show(data) {
+            let count = 1;
+            let tr = document.createElement("tr");
+            for (let i of data){
+                let td = document.createElement("td");
+                let h1 = document.createElement("h1");
+                let img = document.createElement("img");
+                if (i.gender=="Male"){
+                    img.src = "http://10.0.15.21/lab/lab5/images/img_male.png";
+                }else {img.src = "http://10.0.15.21/lab/lab5/images/img_female.png";}
+                td.appendChild(img);
+                h1.appendChild(document.createTextNode(count.toString()+". "+i.name));
+                td.appendChild(h1);
+                td.appendChild(document.createTextNode("physics : "+i.physics));
+                td.appendChild(document.createElement("br"));
+                td.appendChild(document.createTextNode("maths : "+i.maths));
+                td.appendChild(document.createElement("br"));
+                td.appendChild(document.createTextNode("english : "+i.english));
+                tr.appendChild(td);
+                if (count % 4 === 0) {
+                    document.getElementById("table1").appendChild(tr);
+                    tr = document.createElement("tr");
+                }
+                count++;
+            }
+        }
+        fetch('student-score.json')
+            .then(response => response.json())
+            .then(data => show(data))
+            .catch(error => console.log('error', error));
+    </script>
+</body>
+</html>
