@@ -5,73 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lab6-2</title>
     <style>
-        * {
-          box-sizing:border-box;
+      body {
+            margin: 10px;
         }
         .box {
-          padding:20px;
-          float:left;
-          width:22%;
+          padding:10px;
+          width:20%;
+          height: 300px;
           border: 1px solid black;
           text-align: center;
+          float:left;
+          margin: 5px;
         }
-        .row1{
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
+        .imgB{ 
+           height: 75%;
+            overflow: hidden;
+            position: relative;
         }
         img{ 
-          width: 100%;
+          height: 100%;
+          left: -5%;
+          
+          
         }
         p {
-            font-size: 150%;
+          font-size: 150%;
         }
-        @media screen and (max-width:800px){
+        @media screen and (max-width:850px){
           .box{
-            width:49%; 
+            width:40%; 
           }
         }
-        @media screen and (max-width:400px){
+        @media screen and (max-width:440px){
           .box{
-            width:100%; 
+            width:90%; 
           }
         }
     </style>
 </head>
 <body>
-    <div class="row1">
+
       <div class="box">
+        <div class="imgB">
           <img src="https://th.bing.com/th/id/R.8c3b2837c8dc1dcf092b44df6d6be047?rik=a%2blOECoRmo2KMw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f5%2f5c%2fPair_of_white_domesticated_ducks.jpg&ehk=3siAl%2bU0nwJSneOqB0WB7Dz3ZOQ0nnZNmI%2fN8qkqzJ0%3d&risl=1&pid=ImgRaw&r=0">
+        </div>
           <p>Charlie</p>
       </div>
       <div class="box">
-        <img src="https://th.bing.com/th/id/OIP.VWsBLLO6Jabu1IuWd3_sNQHaHa?rs=1&pid=ImgDetMain">
+        <div class="imgB">
+          <img src="https://th.bing.com/th/id/OIP.VWsBLLO6Jabu1IuWd3_sNQHaHa?rs=1&pid=ImgDetMain">
+        </div>
         <p>Pebby</p>
       </div>
       <div class="box">
-        <img src="https://th.bing.com/th/id/R.e56a460d30a7c38597d67e02d7ecba94?rik=HS1%2f4%2bFn63hpJw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-ogkSpbuCps4%2fTWG3DGdHkWI%2fAAAAAAAAA8M%2fUNBClDd1yLE%2fs1600%2fwhite-duck-water.jpg&ehk=amXglkfr8S07SuyY6SR89aJHrUZcZwotK5%2bMd2hT85Y%3d&risl=&pid=ImgRaw&r=0">
+        <div class="imgB">
+          <img src="https://th.bing.com/th/id/R.e56a460d30a7c38597d67e02d7ecba94?rik=HS1%2f4%2bFn63hpJw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-ogkSpbuCps4%2fTWG3DGdHkWI%2fAAAAAAAAA8M%2fUNBClDd1yLE%2fs1600%2fwhite-duck-water.jpg&ehk=amXglkfr8S07SuyY6SR89aJHrUZcZwotK5%2bMd2hT85Y%3d&risl=&pid=ImgRaw&r=0">
+        </div>
         <p>Rocky</p>
       </div>
       <div class="box">
-        <img src="">
+        <div class="imgB">
+          <img src="https://i0.wp.com/mikejacksonphotography.com/wp-content/uploads/2023/12/WoodDuck1_Nov20.jpg?ssl=1">
+        </div>
         <p>Jack</p>
       </div>
       <div class="box">
-        <img src="">
+        <div class="imgB">
+          <img src="https://media.istockphoto.com/id/1412636512/photo/whio-blue-duck-in-river.jpg?s=612x612&w=0&k=20&c=7YdD_XLTyxTUd0o7kxlKnOy1pZJaJpuQ8hpVvmeUB5k=">
+        </div>
         <p>Toby</p>
       </div>
       <div class="box">
-        <img src="">
+        <div class="imgB">
+          <img src="https://organicfeeds.com/wp-content/uploads/2021/03/How-To-Raise-A-Baby-Duck-scaled-1.jpg">
+        </div>
         <p>Bentley</p>
       </div>
       <div class="box">
-        <img src="">
+        <div class="imgB">
+          <img src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/187768561/1200">
+        </div>
         <p>Lola</p>
       </div>
       <div class="box">
-        <img src="">
+        <div class="imgB">
+          <img src="https://cdn.britannica.com/42/58842-050-6E524F71/Mandarin-duck-Aix-galericulata.jpg">
+        </div>
         <p>Louis II </p>
-      </div>
+
   </div>
 </body>
 </html>

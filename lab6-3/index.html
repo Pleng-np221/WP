@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab6-3</title>
+    <style>
+        * {
+          box-sizing:border-box;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        body{
+            font-family: "Krub", serif;
+            font-weight: 100;
+            font-style: normal;
+            font-size: 20px;
+            padding: 20px;
+        }
+        .one {
+          padding:20px;
+          float:left;
+          width:100%;
+          background-color: lightgrey;
+          border-radius: 5px;
+          font-size: 120%;
+        }
+        .two, .three, .four, .five {
+          padding:20px;
+          float:left;
+          width:25%; 
+        }
+        p {
+          font-family: "Krub", serif;
+            font-weight: 600;
+            font-style: normal;
+          font-size: 28px;
+        }
+        h1 {
+          font-family: "Krub", serif;
+            font-weight: 600;
+            font-style: normal;
+          font-size: 32px;
+        }
+        
+        @media screen and (max-width:900px){
+          .two, .three, .four, .five{
+            width:33.33%; 
+          }
+        }
+        @media screen and (max-width:700px){
+          .two, .three, .four, .five{
+            width:50%; 
+          }
+        }
+        @media screen and (max-width:500px){
+          .two, .three, .four, .five{
+            width:100%; 
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <h1>What is Web Technology?</h1>
+        Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS)
+    </div>
+    <div class="two">
+        <p>HTML</p>
+        HTML is the standard markup language for creating Web pages. HTML describes the structure of a Web page, and consists of a series of elements. HTML elements tell the browser how to display the content.
+    </div>
+    <div class="three">
+        <p>CSS</p>
+        CSS is a language that describes how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work, because it can control the layout of multiple web pages all at once.
+    </div>
+    <div class="four">
+        <p>JavaScript</p>
+        JavaScript is the programming language of HTML and the Web. JavaScript can change HTML content and attribute values. JavaScript can change CSS. JavaScript can hide and show HTML elements, and more.
+    </div>
+    <div class="five">
+      <p>Bootstrap</p>
+      Bootstrap is a flexible and powerful front-end framework that provides a free collection of tools for creating websites and web applications. With HTML, CSS, and JavaScript components Bootstrap makes front-end web development faster and easier for responsive, mobile first projects.
+  </div>
+</body>
+</html>
