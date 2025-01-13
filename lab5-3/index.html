@@ -34,6 +34,14 @@
                         btn.value = j;
                         btn.id = j + i.question;
 
+                        btn.addEventListener('click', function() {
+                            if (btn.value === i.answers.correct) {
+                                alert("Correct");
+                            } else {
+                                alert("Incorrect");
+                            }
+                        });
+
                         label.setAttribute("for", btn.id);
                         label.textContent = `${j.toUpperCase()}. ${i.answers[j]}`;
                         
