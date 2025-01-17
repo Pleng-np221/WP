@@ -1,0 +1,30 @@
+<!-- id) firstname surname (year), category, motivation -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pretest</title>
+ </head>
+ <body>
+    <div id="display"></div>
+    <script>
+        fetch('nobleprize.json')
+        .then(response => response.json())
+        .then(data => show(data))
+        .catch(error => console.log('error', error));
+        function show(data){
+            for (let i of data){
+
+                let up = ' ('+i.year+'), '+i.category+', ';
+                for (let j of i.laureates){
+                    let p = document.createElement("p")
+                    let txt = j.id+') '+j.firstname+' '+j.surname+up+j.motivation;
+                    p.appendChild(document.createTextNode(txt))
+                    document.getElementById('display').appendChild(p);
+                }
+            }
+        }
+    </script>
+ </body>
+ </html>
