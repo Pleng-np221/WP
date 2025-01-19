@@ -6,6 +6,7 @@
     <title>project</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         body{
             font-family: "Lobster", serif;
             font-weight: 400;
@@ -54,28 +55,30 @@
 
             cursor: pointer;
 
-            background-color: #67A9C8;
+            background-color: #57aaed;
             padding: 10px 20px;
             margin: 0 10px;
             border-radius: 20px;
             border: 0px;
             transition:0.3s ease-in-out;
         }
-        .type-btn:hover {
+        .type-btn:hover, .type-btn.active {
             color: white;
             transform: scale(0.9);
+            background-color: #0056b3;
         }
         .line {
             border: none;
             height: 2px;
-            background-color: #67A9C8;
+            background-color: #57aaed;
             margin: 20px auto;
             width: 50%;
         }
-        .menu-list{
+        #menu-list{
             display: flex;
             justify-content: center;
-            padding: 0px;
+            padding: 0px 10%;
+            flex-wrap: wrap;
         }
         .menu-ctn{
             background-color: white;
@@ -91,7 +94,7 @@
             align-items: center;
             position: relative;
 
-            margin: 10px;
+            margin: 20px;
             overflow: visible;
             word-wrap: break-word;
 
@@ -102,34 +105,67 @@
             z-index: 10;
             background: linear-gradient(rgb(255, 220, 217),rgb(219, 230, 255));
         }
+        .menu-ctn p{
+            color: #474C4E;
+            font-size: 24px;
+            font-family: "Prompt", serif;
+            font-weight: 500;
+            font-style: normal;
+        }
         .menu-desc {
             color: #474C4E;
             font-size: 0px;
+            text-align: center;
             opacity: 0;
             transition: 0.3s ease-in-out;
 
             margin: 5px 0 0;
             width:100%;
+            height: 0%;
             word-wrap: break-word;
         }
         .menu-ctn:hover .menu-desc {
+            height: 20%;
             font-size: 14px;
             opacity: 1;
-        }
-        p{
-            margin: 10px 0 0;
-            color: #3781BE;
-            font-size: 24px;
         }
         .menu-img {
             overflow: hidden;
             position: relative;
             width: 90%;
-            height: 70%;
+            height: 80%;
             border-radius: 10%;
         }
         img{
             height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .ref{
+            background-color: rgba(79, 101, 150, 0.4);
+            color: #ecf0f6;
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+        a{
+            margin: 10px;
+            color:#53687a;
+            font-size: 16px;
+            font-family: "Prompt", serif;
+            font-weight: 500;
+            font-style: normal;
+            text-decoration: none;
+            transition:0.3s ease-in-out;
+        }
+        a:hover {
+            color:white;
+            font-size: 18px;
+        }
+        h2{
+            font-weight: 200;
+        }
+        hr{
+            margin: 10px;
         }
     </style>
 </head>
@@ -138,79 +174,103 @@
         <h1>Dusk n Dawn  <->  Cafe n Bistro</h1>
     </div>
     <div class="type-row">
-        <button class="type-btn">Beverage</button>
-        <button class="type-btn">Food</button>
-        <button class="type-btn">Sweet</button>
+        <button class="type-btn active" data-type="beverage">Beverage</button>
+        <button class="type-btn" data-type="food">Food</button>
+        <button class="type-btn" data-type="dessert">Dessert</button>
     </div>
     <hr class="line">
-    <div class="menu-list">
-        <div class="menu-ctn">
-            <div class="menu-img">
-                <img src="https://www.cafebistrofl.com/wp-content/uploads/2018/03/Depositphotos_35989065_original-1024x683.jpg">
-            </div>
-            <p>Name</p>
-            <p class="menu-desc">Descccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</p>
-        </div>
-        <div class="menu-ctn">
-            <div class="menu-img">
-
-            </div>
-            <p>Name</p>
-        </div>
-        <div class="menu-ctn">
-            <div class="menu-img">
-
-            </div>
-            <p>Name</p>
-        </div>
-    </div>
-    <div class="menu-list">
-        <div class="menu-ctn">
-            <div class="menu-img">
-
-            </div>
-            <p>Name</p>
-        </div>
-        <div class="menu-ctn">
-            <div class="menu-img">
-
-            </div>
-            <p>Name</p>
-        </div>
-        <div class="menu-ctn">
-            <div class="menu-img">
-
-            </div>
-            <p>Name</p>
-        </div>
-    </div>
-    <div class="menu-list">
-        <div class="menu-ctn">
-            <div class="menu-img">
-
-            </div>
-            <p>Name</p>
-        </div>
-        <div class="menu-ctn">
-            <div class="menu-img">
-
-            </div>
-            <p>Name</p>
-        </div>
-        <div class="menu-ctn">
-            <div class="menu-img">
-
-            </div>
-            <p>Name</p>
-        </div>
+    <div id="menu-list">
     </div>
     <br>
     <hr>
     <div class="ref">
-        <h2>Reference</h2>
-        <p>a</p>
-        <p>b</p>
-        <p>c</p>
+        <h2>References</h2>
+        <p><a href="https://www.wongnai.com/restaurants/299084Sm-brown-sugar-dessert-cafe-bistro">
+            Brown Sugar Dessert Cafe & Bistro
+        </a></p>
+        <p><a href="https://krasaicafe.com/%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%B9%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B8%B7%E0%B9%88%E0%B8%A1/">
+            Krasai Cafe
+        </a></p>
+        <p><a href="https://www.cafebistrofl.com/menu/#">
+            Cafe Bistro Pensacola Beach Cafe
+        </a></p>
+        <p><a href="https://www.tripadvisor.com/LocationPhotoDirectLink-g293916-d6440324-i198819446-Petite_Audrey_Cafe_Bistro-Bangkok.html">
+            Petite Audrey Cafe & Bistro
+        </a></p>
+        <p><a href="https://www.facebook.com/brixdessertbar/">
+            Brix Dessert Bar
+        </a></p>
     </div>
+
+    <script>
+        const menuItems = {
+        food: [
+            { name: 'Spaghetti', desc: 'Classic spaghetti with Seafood.', img: 'https://img.wongnai.com/p/1920x0/2019/10/20/2bffdae13b374532a9203be28ee64739.jpg' },
+            { name: 'Nacho', desc: 'Crunchy nachos with cheese.', img: 'https://media-cdn.tripadvisor.com/media/photo-s/0b/d9/be/76/crispy-nachos-a-must.jpg' },
+            { name: 'Lasagna', desc: 'Deliciously layered lasagna with tender pasta, rich sauce, and melted cheese, baked to perfection.', img: 'https://img.wongnai.com/p/1920x0/2024/07/15/7cd05548b9dd49c19669d99fc9d3ccfd.jpg' },
+            { name: 'Fish and Chips', desc: 'Golden fried fish and crispy chips.', img: 'https://img.wongnai.com/p/1920x0/2024/07/15/0e350d35712f441bbef1f6cc0a91ad0e.jpg' },
+            { name: 'Caesar Salad', desc: 'Crisp romaine lettuce tossed with creamy Caesar dressing, crunchy croutons, and grated parmesan.', img: 'https://scontent.fbkk5-1.fna.fbcdn.net/v/t39.30808-6/466595088_976016974569719_4353208152071403642_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGEUk_pfonwiY6YtM_VLALdmo4O8NYDFzyajg7w1gMXPAqGsscj1DcF4L-a5u7mLUTEuvG8ecCGO53OTv7CaB2e&_nc_ohc=UkGf1aFI8xgQ7kNvgGrZTwq&_nc_oc=Adht3JNAv3fnCqlIR_xggTX2c-Erdvy7L5Pe4v2Nr9G9cCf3c4JUGY67-mCWoQ7bpck&_nc_zt=23&_nc_ht=scontent.fbkk5-1.fna&_nc_gid=AHd5X4fN2yQruPS3Y65ypCf&oh=00_AYCGr-9Ispx_2PufGfNKXa7PAg9A5H48L2lzlNrd55dEbg&oe=678D1E97' },
+            { name: 'Classic Breakfast', desc: 'Eggs, bacon, and toast.', img: 'https://www.cafebistrofl.com/wp-content/uploads/2020/03/IMG_3823-1.jpg' },
+            { name: 'Guacamole Poached Egg Crostini', desc: 'A delicious bite of creamy guacamole topped with a perfectly poached egg on crispy crostini.', img: 'https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/466338922_973062904865126_4555286138205044828_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeED6Opy1iD9WhlAiSbHHWzW3K3fzi6mDSLcrd_OLqYNIpMo5DkVJ-VZnt5Q663R_iDJomHcZH4Y4wEESJBTC-4_&_nc_ohc=8Ma95EPUoTcQ7kNvgGLh1tw&_nc_oc=AdgRJs8_DFy-8kFuRTL-XWLYfPn7EDx3ammEb-jaS1xI2gT9ASJbSc--PwHh-nLVtoQ&_nc_zt=23&_nc_ht=scontent.fbkk5-6.fna&_nc_gid=A94HCd2DjPuMabOAYtTKyeW&oh=00_AYAgTl2QGsyWrjN_xTLJmU5g-jD132uGgYB1QyG1ZwJuwA&oe=678D12E1' },
+            { name: 'Fried Chicken', desc: 'Crispy, golden-brown chicken with a juicy, tender interior – a classic comfort food favorite.', img: 'https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/459569423_930702245767859_7665903807200152976_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHmR6ldcHyvbW25XFH2CuUGiUeUb1wumWeJR5RvXC6ZZ8i17dKiHYO31_8QlGzvP6WkxZOC_k7U75FgHDeLWpME&_nc_ohc=zsscoS_snRkQ7kNvgHu97Hx&_nc_oc=AdiKCrNErZ7WwIYkmpj87ZiM7sNSZ6xGWo6tK_gBvVe_4kDwiC8B6VWLBbU_zkolNRg&_nc_zt=23&_nc_ht=scontent.fbkk5-5.fna&_nc_gid=A1aaL6t8nBrUZDyOKncxrlm&oh=00_AYChGmLwRb4t8TTTnsWtwITuoT4l51H0zV8ZvuRGIxvuRQ&oe=678D0F22' },
+            { name: 'Samosa', desc: 'Crispy samosas filled with seasoned spinach and melted cheese, offering a savory, satisfying bite.', img: 'https://img.wongnai.com/p/1920x0/2019/05/18/195e91a12d5c4e38ae59ad97529c529e.jpg' }
+        ],
+        beverage: [
+            { name: 'Black Coconut', desc: 'Tropical touch of coconut beneath the strong, invigorating layers of black coffee.', img: 'https://krasaicafe.com/wp-content/uploads/2022/11/coconut_coffee.jpg' },
+            { name: 'Espresso', desc: 'Rich espresso shot.', img: 'https://krasaicafe.com/wp-content/uploads/2021/11/2021-11-08-18-24-12-023.jpg' },
+            { name: 'Cappuccino', desc: 'Espresso with steamed milk and foam.', img: 'https://krasaicafe.com/wp-content/uploads/2021/11/2021-11-08-18-31-47-992.jpg' },
+            { name: 'Latte Signature', desc: 'Smooth latte with milk.', img: 'https://img.wongnai.com/p/1920x0/2021/06/19/3b5495667cb64159a7cf772a4077f0d1.jpg' },
+            { name: 'Hot Mocha', desc: 'Coffee with chocolate syrup.', img: 'https://img.wongnai.com/p/1920x0/2018/09/04/ffe13c1040704eb8bf6948771e4f0c5a.jpg' },
+            { name: 'Caramel Macchiato', desc: 'Espresso with caramel and milk.', img: 'https://krasaicafe.com/wp-content/uploads/2021/11/2021-11-17-22-51-26-300.jpg' },
+            { name: 'Earl Grey', desc: 'Classic Earl Grey tea.', img: 'https://img.wongnai.com/p/1920x0/2024/02/24/51cc9ecc4f7449d9b5a41a17f159ffc6.jpg' },
+            { name: 'Thai Tea', desc: 'Sweet and creamy Thai tea.', img: 'https://krasaicafe.com/wp-content/uploads/2021/11/2021-11-17-22-50-56-467.jpg' },
+            { name: 'Green Tea', desc: 'Refreshing green tea.', img: 'https://krasaicafe.com/wp-content/uploads/2021/11/2021-11-06-13-13-43-789.jpg' },
+            { name: 'Cocoa Mint', desc: 'A refreshing blend of rich cocoa and cool mint', img: 'https://krasaicafe.com/wp-content/uploads/2022/11/Cocoa-Mint.jpg' },
+            { name: 'Coffee X Matcha Latte', desc: 'A vibrant fusion of coffee and matcha latte for a balanced, invigorating experience with every sip.', img: 'https://krasaicafe.com/wp-content/uploads/2021/11/2021-11-17-22-53-04-183.jpg' },
+            { name: 'Matcha Signature', desc: 'Rich and vibrant matcha.', img: 'https://img.wongnai.com/p/1920x0/2024/07/15/99386abc86dc4cc5bde96b54de3430a1.jpg' },
+            { name: 'Hojicha Lemon Tea', desc: 'Tea with honey and lemon.', img: 'https://img.wongnai.com/p/1920x0/2024/07/15/a08e7a55cc0d44a086c10786c368129e.jpg' }
+        ],
+        dessert: [
+            { name: 'Beignets', desc: 'Light, fluffy pastries dusted with powdered sugar', img: 'https://scontent.fbkk5-6.fna.fbcdn.net/v/t39.30808-6/455862358_912414780929939_4294751257945152857_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEBGPMM5ECqzEvZ6n08qvdYFoPBH5T_e_gWg8EflP97-MjaK3c9LdMcZ0r3jb_MT_N4mTPFNUUW3ctY44kNKALv&_nc_ohc=Esca_czquNwQ7kNvgGN-Uv0&_nc_oc=AdgQVnsmzFQbSdXTnOpCs_WMmaRVKs5I4wt1ZKKd7IKlgRnTSDh-FoO3eMbJjIfeTLc&_nc_zt=23&_nc_ht=scontent.fbkk5-6.fna&_nc_gid=A88o0NPUJTBLZISFnI7weoj&oh=00_AYCTYTjxoINc7PO5veNpMcK_n5A0nBk_CkBGI0EtZROEFA&oe=678D3D79' },
+            { name: 'Cake', desc: 'Delicious slice of cake.', img: 'https://img.wongnai.com/p/1920x0/2021/06/19/71b5df8e27ee497bb141412af2796b1f.jpg' },
+            { name: 'Waffle Ice Cream', desc: 'Warm, crispy waffles paired with creamy ice cream.', img: 'https://img.wongnai.com/p/1920x0/2024/10/27/02dd549190e846c4be4b8bf6fecd0932.jpg' },
+            { name: 'Pancake', desc: 'Fluffy pancakes with syrup.', img: 'https://www.cafebistrofl.com/wp-content/uploads/2020/03/IMG_3822.jpg'},
+            { name: 'Crepe', desc: 'Thin crepe with fillings.', img: 'https://img.wongnai.com/p/1920x0/2020/08/31/7ba5a64fbf7040c6be67a4f99b9c26fc.jpg' },
+            { name: 'Honey Toast', desc: 'Crispy toast with honey and butter.', img: 'https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/460825798_936615681843182_5001851542569689723_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH_ODJzwUyJMMRCeUX3FxAQyYOyv1jnD-TJg7K_WOcP5Hs6t3D_0jKZw65lQLS57Av9R-Rjrh4Pav_qcGTtCfTx&_nc_ohc=BucBnFSCqX4Q7kNvgFjFpvj&_nc_oc=AdhYH_GTi7DL-9WOz42VpmEcro615eDjaGep3akKKnmfDxJycnIy4sLctqVPmPb0Py0&_nc_zt=23&_nc_ht=scontent.fbkk5-7.fna&_nc_gid=AG2Qjd8U4Ak7vMtqzQLGi3-&oh=00_AYCBle3EYZNlRhAIRpeUpWPPbB33OSgq4gf2QRAVKeWuaA&oe=678D20B4' },
+            { name: 'Bingsu', desc: 'Shaved ice with toppings.', img: 'https://img.wongnai.com/p/1920x0/2019/10/19/a82a7f1143d243e89e0bcc65ba030691.jpg' },
+            { name: 'Muffin', desc: 'Soft, fluffy, and bursting with flavor – the perfect treat for any time of day.', img: 'https://scontent.fbkk5-3.fna.fbcdn.net/v/t39.30808-6/459336669_929384045899679_5328215820540475365_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHNm0_RcBIhr7vYr-E8TWDfFdBvVHZBgQIV0G9UdkGBAiuNp7TJdKhARLRAuRLyfhg6gTP5xZSOwEQAYNqpnQ3L&_nc_ohc=bheNVfTZigQQ7kNvgGD-tPU&_nc_oc=AdjRPtjFih_-1yojofPtvl5OTMDapAJSTPjgY8O46D7WNOQEEAZfMJwXHONcbW7lF94&_nc_zt=23&_nc_ht=scontent.fbkk5-3.fna&_nc_gid=AnzWu22S_6yDyAZLaRq18j9&oh=00_AYBxnisFVMHCcQzhEKGc8fOko5vlSS6cdxpNqaJiA7efPg&oe=678D2245' },
+            { name: 'Croffle', desc: 'A delicious fusion of a croissant and waffle, crispy on the outside and buttery on the inside.', img: 'https://scontent.fbkk5-1.fna.fbcdn.net/v/t39.30808-6/456687194_917158527122231_4828128470722432971_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHgS1pzF9EpDNAoS5ljB2CJZDUwSuLyRntkNTBK4vJGe2SZvA2F4P7m1dEwPfvA1ec39LFG8EGJahIIra6WhtLz&_nc_ohc=F9tlT7AhejUQ7kNvgEXoDtn&_nc_oc=Adjg9p-19SghMgvbtiRyWzgPpe6RGHJDox7uBLWymKhgfQLtjLl9IXQ9W2D04uGjAVw&_nc_zt=23&_nc_ht=scontent.fbkk5-1.fna&_nc_gid=AKLW48ZBH4eNbSZPE4y1Vwi&oh=00_AYAoAbM5iDz2FfbWW1xQEVavtMWAWS5DgKSPCW7wx2xKCA&oe=678D2B9F' }
+
+        ]
+        };
+
+        document.querySelectorAll('.type-btn').forEach(btn =>
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const type = btn.getAttribute('data-type');
+                display(type);
+            })
+        )
+        function display(type) {
+            let menuDisplay = document.getElementById('menu-list');
+            menuDisplay.innerHTML = '';
+            menuItems[type].forEach(i => {
+                let menu = 
+                `
+                <div class="menu-ctn">
+                    <div class="menu-img">
+                        <img src="${i.img}" alt="${i.name}">
+                    </div>
+                    <p>${i.name}</p>
+                    <p class="menu-desc">${i.desc}</p>
+                </div>
+                `;
+                menuDisplay.innerHTML += menu;
+            })
+        }
+        display('beverage');
+    </script>
 </body>
 </html>
