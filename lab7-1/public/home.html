@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab7-1</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+      body{
+          background-color: rgb(164, 181, 193);
+          font-family: "Krub", serif;
+          font-weight: 600;
+          font-style: normal;
+          font-size: large;
+      }
+        .btn-bar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px;
+            display: flex;
+        }
+        .btn-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+        .btn-bar a:hover {
+            background-color: #555;
+        }
+        .btn-bar .green-btn {
+            background-color: #008c4a;
+        }
+        p {
+            padding: 20px;
+        }
+        .btn-bar .space {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <img src="/img/panda-logo.png" width ="500" alt="Hello Panda Web Programming">
+    </header>
+
+    <div class="btn-bar">
+        <a href="/">Home</a>
+        <a href="/ducks">Ducks</a>
+        <a href="/raccoons">Raccoons</a>
+        <a href="/owls">Owls</a>
+        <div class="space"></div>
+        <a href="/about" class="green-btn">About</a>
+    </div>
+        <p>
+        <strong>  A pet, or companion animal</strong>
+        , is an animal kept primarily for a person's company or entertainment rather than as a working animal, livestock, or a laboratory animal. Popular pets are often considered to have attractive/cute appearances, intelligence, and relatable personalities, but some pets may be taken in on an altruistic basis (such as a stray animal) and accepted by the owner regardless of these characteristics.
+      </p>
+</body>
+</html>

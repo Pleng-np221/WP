@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>owls</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+      body{
+          background-color: rgb(164, 181, 193);
+          font-family: "Krub", serif;
+          font-weight: 600;
+          font-style: normal;
+          font-size: large;
+          margin: 10px;
+      }
+        .box {
+          padding:10px;
+          width:20%;
+          height: 300px;
+          border: 1px solid black;
+          text-align: center;
+          float:left;
+          margin: 5px;
+        }
+        .imgB{ 
+           height: 75%;
+            overflow: hidden;
+            position: relative;
+        }
+        img{ 
+          height: 100%;
+          left: -5%;
+          
+          
+        }
+        p {
+          font-size: 150%;
+        }
+        @media screen and (max-width:850px){
+          .box{
+            width:40%; 
+          }
+        }
+        @media screen and (max-width:440px){
+          .box{
+            width:90%; 
+          }
+        }
+        .btn-bar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px;
+            display: flex;
+        }
+        .btn-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+        .btn-bar a:hover {
+            background-color: #555;
+        }
+        .btn-bar .green-btn {
+            background-color: #008c4a;
+        }
+        p {
+            padding: 20px;
+        }
+        .btn-bar .space {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="btn-bar">
+    <a href="/">Home</a>
+    <a href="/ducks">Ducks</a>
+    <a href="/raccoons">Raccoons</a>
+    <a href="/owls">Owls</a>
+    <div class="space"></div>
+    <a href="/about" class="green-btn">About</a>
+</div>
+
+      <div class="box">
+        <div class="imgB">
+          <img src="https://wpcdn.web.wsu.edu/wp-vetmed/uploads/sites/2673/2021/03/Sprite-feature-1100w.png">
+        </div>
+          <p>Lewis</p>
+      </div>
+      <div class="box">
+        <div class="imgB">
+          <img src="https://www.redding.com/gcdn/-mm-/5bfd425cc44006fdb7c72195974e3d15a11728be/c=0-52-626-887/local/-/media/2018/07/13/Burlington/Burlington/636671033953106201-bird-1.jpg?width=300&height=401&fit=crop&format=pjpg&auto=webp">
+        </div>
+        <p>Patricia</p>
+      </div>
+      
+</body>
+</html>
