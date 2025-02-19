@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab10-1</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        body{
+            font-family: "Krub", serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: large;
+            padding: 10px;
+        }
+        h1 {
+            font-weight: 900;
+            font-size: 30px;
+        }
+        p {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- สร้างตารางสำหรับแสดงข้อมูล -->
+<h1>User Details</h1>
+<% if (data) { %>
+    <p><b>ID: </b><%= data.id %></p>
+    <p><b>First Name: </b><%= data.first_name %></p>
+    <p><b>Last Name: </b><%= data.last_name %></p>
+    <p><b>Username: </b><%= data.username %></p>
+    <p><b>Email: </b><%= data.email %></p>
+<% } else { %>
+    <p>User not found.</p>
+<% } %>
+<a href="/">Back to Users List</a>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        p{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- public/form.html -->
+<a href="/signin">Sign In</a><br>
+<h1>Create Account</h1>
+    <form action="/process_get" method="GET">
+        <p>Username: <input type="text" name="username"></p>
+        <p>Password: <input type="password" name="password"></p>
+        <p>Email: <input type="email" name="email"></p>
+        <p>First Name: <input type="text" name="firstname"></p>
+        <p>Last Name: <input type="text" name="lastname"></p>
+        <p>Age: <input type="number" name="age" min="1"></p>
+        <p>Address: <input type="text" name="address"></p>
+        <p>Phone: <input type="text" name="phone"></p>
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>
