@@ -1,0 +1,45 @@
+<%- include("head") %>
+<body>
+    <h1>Create a New Todo</h1>
+    <% if (data) { %>
+    <p style="color:lightgray;">random suggest: <%= data.activity %></p>
+    <% } %>
+    <form action="/" method="POST">
+        <div class="form-group">
+            <label>Title:</label>
+            <input type="text" name="title" required class="form-control"> <br>
+        </div>
+        <label>Description:</label>
+        <textarea name="description" class="form-control"></textarea> <br>
+        
+        <div class="form-group">
+        <label>Deadline:</label>
+        </div>
+        <input type="date" name="deadline" required class="form-control w-25"> <br>
+        
+        <input type="submit" value="Create Todo" class="btn btn-success" onclick="showSuccess()">
+        
+    </form>
+    <br>
+    <a href="/"><input type="submit" value="Back to List Page" class="btn btn-light"></a>
+    <div id="successAlert" class="alert alert-success" style="display: none; margin-top: 10px;">
+        ✅ Todo added successfully!
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        
+        function showSuccess(event) {
+    event.preventDefault(); // Prevent form submission
+
+    if (document.getElementById("deadline").value === "") {
+        alert("⚠️ Please select a deadline before proceeding!");
+        return false;
+    }
+
+    alert("✅ Todo added successfully!"); // Display success message
+
+    return true;
+}
+    </script>
+</body>
+</html>

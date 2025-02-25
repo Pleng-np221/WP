@@ -1,0 +1,48 @@
+<%- include("head") %>
+<body>
+    <h1>Todos List</h1>
+    <a href="/create" type="button" class="btn btn-success"= >Add Todo</a>
+    <table id="table1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Deadline</th>
+                <th>Completed</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        
+    <% data.forEach((item)=>{ %>
+        <tr>
+            <td><a href="/todos/<%=item.id%>"><%=item.id%></a></td>
+            <td><%=item.title%></td>
+            <td><%=item.deadline%></td>
+            <td>
+                <input type="checkbox" data-id="<%= item.id %>" 
+                class="checkbox" <%= item.completed === 1 ? "checked" : "" %>>
+            </td>
+        </tr>
+    <% }); %>   
+        </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.querySelectorAll(".checkbox").forEach(cb => {
+        cb.addEventListener("change", async function() {
+            let todoId = this.getAttribute("data-id");
+            let completed = this.checked ? 1 : 0;
+
+            await fetch(`/checked/${todoId}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ completed })
+            });
+
+            console.log(`ID: ${todoId} = ${completed}`);
+        });
+        });
+
+    </script>
+</body>
+</html>
