@@ -1,0 +1,18 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Q{{ question.id }} : {{ question.question_text }}</h1>
+        <h2>{{ question.pub_date }}</h2>
+        <h3>Description: {{ question.description }}</h3>
+        {% if choices %}
+            <ul>
+            {% for choice in choices %}
+                <li>{{ choice.choice_text }} ( {{choice.votes}} )</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    </body>
+</html>
