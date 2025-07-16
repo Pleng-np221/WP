@@ -1,0 +1,4 @@
+naive datetime = datetime without time zone
+aware datetime = datetime with time zone
+
+order_id, product_id ตั้งชื่อแค่ order, product พอ _id จะเติมต่อท้ายอัตโนมัติตอนสร้าง

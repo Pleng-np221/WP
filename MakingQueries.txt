@@ -1,0 +1,45 @@
+import shop.models
+c1 = Customer(first_name="Django", last_name="Reinhardt", email="dj_rein@mail.com", address="{Liberchies, Pont-à-Celles, Belgium}")
+c1.save()
+
+c1.first_name = "Darwin"
+c1.last_name = "Nunez"
+c1.email = "660xxxxx@kmitl.ac.th"
+c1.save()
+
+p1 = Product(name="USB-C Charger", description="20W fast charging USB-C adapter, compact and efficient.", remaining_amount = 100, price=299.50)
+p2 = Product(name="Noise Cancelling Earbuds", description="Wireless earbuds with advanced noise cancelling technology.", remaining_amount = 50, price=1890.00)
+p3 = Product(name="Mechanical Keyboard", description="RGB mechanical keyboard designed for gamers with tactile feedback.", remaining_amount = 25, price=2499.99)
+p1.save()
+p2.save()
+p3.save()
+Product.objects.filter(price__gt=500)
+
+o1 = Order(customer=c1, remark="This is order for Darwin Nunez")
+o1.save()
+oi1 = OrderItem(order=o1, product=p3, amount = 1)
+oi2 = OrderItem(order=o1, product=p1, amount = 2)
+oi1.save()
+oi2.save()
+
+Product.objects.filter(name__icontains="cha")
+
+____
+
+>>> from datetime import datetime, timedelta
+>>> from django.utils import timezone
+>>> from zoneinfo import ZoneInfo
+>>> datetime.now()
+datetime.datetime(2025, 7, 16, 17, 16, 17, 933738)
+>>> dn = datetime.now()
+>>> df = dn + timedelta(days=500)
+>>> print(df)
+2026-11-28 17:17:01.614086
+>>> print(dn)
+2025-07-16 17:17:01.614086
+>>> df.date()
+datetime.date(2026, 11, 28)
+>>> df.weekday()
+5
+>>> df.strftime("%A")
+'Saturday'
